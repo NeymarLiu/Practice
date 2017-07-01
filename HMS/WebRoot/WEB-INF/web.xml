@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  
+  <!--      过滤器配置        -->
+  
+  <filter>
+    <filter-name>login</filter-name>
+    <filter-class>com.zrgk.filter.LoginFilter</filter-class>
+  </filter>
+   <filter-mapping>
+    <filter-name>login</filter-name>
+    <url-pattern>/Role/*</url-pattern>
+    <url-pattern>/User/*</url-pattern>
+    <url-pattern>/doctor/*</url-pattern>
+    <url-pattern>/hospital/*</url-pattern>
+    <url-pattern>/registration/*</url-pattern>
+    <url-pattern>/Resource/*</url-pattern>
+    <url-pattern>/medicine/*</url-pattern>
+    <url-pattern>/index.jsp</url-pattern>
+    <url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>character</filter-name>
+    <filter-class>com.zrgk.filter.CharacterEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>character</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!--    监听器 配置              -->
+  
+  <listener>
+  	<listener-class>com.zrgk.listener.UBListener</listener-class>
+  </listener>
+  
+  <listener>
+  	<listener-class>com.zrgk.listener.AllRequestListener</listener-class>
+  </listener>
+  
+<!--   <session-config>
+  	<session-timeout>1</session-timeout>
+  </session-config> -->
+ 
+  
+  <!--       龙汶宇   Servlet配置          -->
+  <servlet>
+   	<servlet-name>BeHospitalServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.BeHospitalServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>AccountServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.AccountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BeHospitalServlet</servlet-name>
+    <url-pattern>/BeHospitalServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AccountServlet</servlet-name>
+    <url-pattern>/AccountServlet.do</url-pattern>
+  </servlet-mapping>
+  <!--       刘灿      Servlet配置         -->
+  <servlet>
+    <servlet-name>MenuServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.MenuServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RoleServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.RoleServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ValidateNumberServlet.do</servlet-name>
+    <servlet-class>com.zrgk.servlet.ValidateNumberServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>MenuServlet</servlet-name>
+    <url-pattern>/MenuServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RoleServlet</servlet-name>
+    <url-pattern>/RoleServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/UserServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ValidateNumberServlet.do</servlet-name>
+    <url-pattern>/ValidateNumberServlet.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!--      任兵    Servlet配置          -->
+  
+   <servlet>
+    <servlet-name>DrugPeopleServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.DrugPeopleServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DrugServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.DrugServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>DrugPeopleServlet</servlet-name>
+    <url-pattern>/DrugPeopleServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DrugServlet</servlet-name>
+    <url-pattern>/DrugServlet.do</url-pattern>
+  </servlet-mapping>
+  <!--      魏阳明 Servlet配置          -->
+  
+   <servlet>
+    <servlet-name>ReigisterServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.ReigisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReigisterServlet</servlet-name>
+    <url-pattern>/ReigisterServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DoctorServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.DoctorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoctorServlet</servlet-name>
+    <url-pattern>/DoctorServlet.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  <!--      王明勇 Servlet配置          -->
+   <servlet>
+    <servlet-name>WHosrServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.WHosrServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChargeProjectServlet</servlet-name>
+    <servlet-class>com.zrgk.servlet.ChargeProjectServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>WHosrServlet</servlet-name>
+    <url-pattern>/WHosrServlet.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChargeProjectServlet</servlet-name>
+    <url-pattern>/ChargeProjectServlet.do</url-pattern>
+  </servlet-mapping>
+  <!--      欢迎界面配置          -->
+  <welcome-file-list>
+    <welcome-file>/login.jsp</welcome-file>
+  </welcome-file-list>
+ <!--      错误页面配置          -->
+ <error-page>
+		<error-code>500</error-code>
+		<location>/error.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error.jsp</location>
+	</error-page>
+</web-app>
+ 
